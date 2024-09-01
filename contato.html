@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta a visualização em dispositivos móveis -->
+    <title>Eniel Gomes - Contato</title> <!-- Título da página exibido na aba do navegador -->
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo de estilos CSS externo -->
+    <style>
+        body {
+            background-color: #000000; /* Define a cor de fundo da página */
+            color: #FF6F61; /* Define a cor do texto */
+            font-family: Arial, sans-serif; /* Define a fonte do texto */
+            margin: 0; /* Remove a margem padrão */
+            padding: 0; /* Remove o padding padrão */
+            display: flex; /* Usa Flexbox para centralizar o conteúdo */
+            justify-content: center; /* Centraliza o conteúdo horizontalmente */
+            align-items: center; /* Centraliza o conteúdo verticalmente */
+            height: 100vh; /* Define a altura da página como 100% da altura da viewport */
+        }
+
+        .container {
+            display: flex; /* Usa Flexbox para o layout interno */
+            flex-direction: column; /* Organiza os itens verticalmente */
+            align-items: center; /* Centraliza os itens horizontalmente */
+        }
+
+        header, form {
+            margin-bottom: 20px; /* Adiciona uma margem abaixo do cabeçalho e do formulário */
+        }
+
+        h1 {
+            text-align: center; /* Centraliza o texto do título */
+            margin-bottom: 20px; /* Adiciona uma margem abaixo do título */
+            font-size: 24px; /* Define o tamanho da fonte do título */
+            text-transform: uppercase; /* Transforma o texto em maiúsculas */
+        }
+
+        label {
+            color: white; /* Define a cor do texto dos rótulos */
+            font-size: 15px; /* Define o tamanho da fonte dos rótulos */
+            margin-bottom: 5px; /* Adiciona uma margem abaixo dos rótulos */
+        }
+
+        form {
+            display: flex; /* Usa Flexbox para o layout interno do formulário */
+            flex-direction: column; /* Organiza os itens do formulário verticalmente */
+            width: 300px; /* Define a largura do formulário */
+            background-color: #1a1a1a; /* Define a cor de fundo do formulário */
+            padding: 15px; /* Adiciona padding interno ao formulário */
+            border-radius: 8px; /* Adiciona bordas arredondadas ao formulário */
+            text-align: center; /* Centraliza o texto dentro do formulário */
+            transition: transform 0.3s; /* Adiciona uma transição suave para transformações */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil ao formulário */
+        }
+
+        input, textarea {
+            margin-bottom: 10px; /* Adiciona uma margem abaixo dos campos de entrada e da área de texto */
+            padding: 8px; /* Adiciona padding interno aos campos de entrada e da área de texto */
+            font-size: 16px; /* Define o tamanho da fonte dos campos de entrada e da área de texto */
+            border: 1px solid #FF6F61; /* Define a cor e a largura da borda dos campos de entrada e da área de texto */
+            border-radius: 4px; /* Adiciona bordas arredondadas aos campos de entrada e da área de texto */
+            background-color: #000000; /* Define a cor de fundo dos campos de entrada e da área de texto */
+            color: #FF6F61; /* Define a cor do texto dentro dos campos de entrada e da área de texto */
+        }
+
+        input[type="submit"] {
+            background-color: #FF6F61; /* Define a cor de fundo do botão de envio */
+            color: #000000; /* Define a cor do texto do botão de envio */
+            border: none; /* Remove a borda do botão de envio */
+            cursor: pointer; /* Muda o cursor para uma mão ao passar sobre o botão de envio */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF856E; /* Muda a cor de fundo do botão de envio ao passar o mouse sobre ele */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">EG</a> <!-- Logo do site, que pode ser um link para a página inicial -->
+
+        <nav>
+            <!-- Navegação do site com links para diferentes páginas -->
+            <a href="index.html">Sobre</a>
+            <a href="formacao.html">Formação</a>
+            <a href="portfolio.html">Portfólio</a>
+            <a href="contato.html" class="active">Contato</a> <!-- Link para a página de Contato, marcado como ativo -->
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>CONTATO</h1> <!-- Título da seção de contato -->
+        <form id="contato-form">
+            <!-- Formulário de contato -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required> <!-- Campo para o nome do usuário -->
+        
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required> <!-- Campo para o e-mail do usuário -->
+        
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea> <!-- Área de texto para a mensagem do usuário -->
+        
+            <input type="submit" value="Enviar"> <!-- Botão para enviar o formulário -->
+        </form>
+        <div id="resposta"></div> <!-- Div para exibir a resposta do servidor -->
+    </div>   
+    <script>
+        // Adiciona um ouvinte de evento para o envio do formulário
+        document.getElementById('contato-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio tradicional do formulário
+        
+            // Coleta os dados do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+        
+            // Envia os dados para o servidor usando Fetch API
+            fetch('enviar_email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded' // Define o tipo de conteúdo como URL encoded
+                },
+                body: `nome=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&mensagem=${encodeURIComponent(mensagem)}` // Codifica os dados do formulário
+            })
+            .then(response => response.text()) // Converte a resposta para texto
+            .then(data => {
+                document.getElementById('resposta').textContent = data; // Exibe a resposta do servidor
+            })
+            .catch(error => {
+                console.error('Erro:', error); // Exibe qualquer erro no console
+                document.getElementById('resposta').textContent = "Ocorreu um erro ao enviar a mensagem."; // Exibe uma mensagem de erro ao usuário
+            });
+        });
+    </script>    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta o layout para diferentes tamanhos de tela -->
+    <title>Eniel Gomes - Formação</title> <!-- Título da página exibido na aba do navegador -->
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo de estilos CSS externo -->
+    <style>
+        body {
+            background-color: #000000; /* Define a cor de fundo da página */
+            color: #FF6F61; /* Define a cor do texto */
+            font-family: Arial, sans-serif; /* Define a fonte do texto */
+            margin: 0; /* Remove a margem padrão */
+            padding: 0; /* Remove o padding padrão */
+            display: flex; /* Usa Flexbox para centralizar o conteúdo */
+            justify-content: center; /* Centraliza o conteúdo horizontalmente */
+            align-items: center; /* Centraliza o conteúdo verticalmente */
+            height: 100vh; /* Define a altura da página como 100% da altura da viewport */
+        }
+
+        nav a.active {
+            border-bottom: 2px solid #FF6F61; /* Adiciona uma linha embaixo do link ativo */
+            padding-bottom: 5px; /* Adiciona um padding embaixo do link ativo */
+        }
+
+        .container {
+            padding: 20px; /* Adiciona padding interno ao container */
+            width: 100%; /* Define a largura do container como 100% */
+            max-width: 800px; /* Define a largura máxima do container */
+        }
+
+        h1 {
+            text-align: center; /* Centraliza o texto do título */
+            margin-bottom: 20px; /* Adiciona uma margem abaixo do título */
+            font-size: 24px; /* Define o tamanho da fonte do título */
+            text-transform: uppercase; /* Transforma o texto em maiúsculas */
+        }
+
+        .formacao-item {
+            background-color: #1a1a1a; /* Define a cor de fundo dos itens de formação */
+            padding: 15px; /* Adiciona padding interno aos itens de formação */
+            border-radius: 8px; /* Adiciona bordas arredondadas aos itens de formação */
+            margin-bottom: 20px; /* Adiciona uma margem abaixo de cada item */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil aos itens de formação */
+        }
+
+        .formacao-item h2 {
+            font-size: 17px; /* Define o tamanho da fonte dos subtítulos */
+            margin: 10px 0; /* Adiciona uma margem acima e abaixo dos subtítulos */
+            color: #FF6F61; /* Define a cor do texto dos subtítulos */
+        }
+
+        .formacao-item p {
+            color: #ffffff; /* Define a cor do texto dos parágrafos */
+            font-size: 14px; /* Define o tamanho da fonte dos parágrafos */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">EG</a> <!-- Logo do site, que pode ser um link para a página inicial -->
+        <nav>
+            <!-- Navegação do site com links para diferentes páginas -->
+            <a href="index.html">Sobre</a>
+            <a href="formacao.html" class="active">Formação</a> <!-- Link para a página de Formação, marcado como ativo -->
+            <a href="portfolio.html">Portfólio</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Formação Educacional e Idiomas</h1> <!-- Título da seção de formação -->
+
+        <!-- Formação Acadêmica -->
+        <div class="formacao-item">
+            <h2>Ensino Médio</h2>
+            <p>Concluído em 2015.</p>
+        </div>
+
+        <!-- Curso Superior -->
+        <div class="formacao-item">
+            <h2>Curso Superior - Análise e Desenvolvimento de Sistemas (ADS)</h2>
+            <p>Atualmente cursando, focado em desenvolvimento de software, banco de dados, e tecnologia da informação.</p>
+        </div>
+
+        <!-- Curso de Idiomas -->
+        <div class="formacao-item">
+            <h2>Curso de Idiomas - Uninter</h2>
+            <p>Concluído o módulo básico em 2024. Curso em andamento com mais três níveis restantes, desenvolvendo habilidades em leitura, escrita e conversação em inglês.</p>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="formacao-item">
+            <h2>Idiomas</h2>
+            <p><strong>Português:</strong> Nativo</p>
+            <p><strong>Inglês:</strong> Básico (Módulo básico concluído, continuando com níveis intermediário e avançado)</p>
+        </div>
+    </div>
+</body>
+</html>

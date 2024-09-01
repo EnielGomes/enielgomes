@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta a visualização em dispositivos móveis -->
+    <title>Eniel Gomes - Portfólio</title> <!-- Título da página exibido na aba do navegador -->
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo de estilos CSS externo -->
+    <style>
+        body {
+            background-color: #000000; /* Define a cor de fundo da página */
+            color: #FF6F61; /* Define a cor do texto */
+            font-family: Arial, sans-serif; /* Define a fonte do texto */
+            margin: 0; /* Remove a margem padrão */
+            padding: 0; /* Remove o padding padrão */
+            display: flex; /* Usa Flexbox para centralizar o conteúdo */
+            justify-content: center; /* Centraliza o conteúdo horizontalmente */
+            align-items: center; /* Centraliza o conteúdo verticalmente */
+            height: 100vh; /* Define a altura da página como 100% da altura da viewport */
+        }
+
+        .container {
+            padding: 20px; /* Adiciona padding interno ao container */
+            width: 100%; /* Define a largura do container como 100% */
+            max-width: 1200px; /* Define a largura máxima do container */
+        }
+
+        h1 {
+            text-align: center; /* Centraliza o texto do título */
+            margin-bottom: 20px; /* Adiciona uma margem abaixo do título */
+            font-size: 24px; /* Define o tamanho da fonte do título */
+            text-transform: uppercase; /* Transforma o texto em maiúsculas */
+        }
+
+        .portfolio-grid {
+            display: grid; /* Usa Grid Layout para o layout dos itens do portfólio */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Define o layout das colunas, ajustando automaticamente */
+            gap: 20px; /* Define o espaço entre os itens do grid */
+        }
+
+        .portfolio-item {
+            background-color: #1a1a1a; /* Define a cor de fundo dos itens do portfólio */
+            padding: 15px; /* Adiciona padding interno aos itens do portfólio */
+            border-radius: 8px; /* Adiciona bordas arredondadas aos itens do portfólio */
+            text-align: center; /* Centraliza o texto dentro dos itens do portfólio */
+            transition: transform 0.3s; /* Adiciona uma transição suave para transformações */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil aos itens do portfólio */
+        }
+
+        .portfolio-item img {
+            width: 100%; /* Ajusta a largura para ocupar 100% do espaço do item */
+            height: 200px; /* Define uma altura fixa para todas as imagens */
+            object-fit: cover; /* Faz o ajuste da imagem dentro do container */
+            border-radius: 8px; /* Adiciona bordas arredondadas às imagens */
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05); /* Aumenta o tamanho do item ao passar o mouse sobre ele */
+        }
+
+        .portfolio-item h2 {
+            font-size: 24px; /* Define o tamanho da fonte dos títulos dos itens do portfólio */
+            margin: 10px 0; /* Adiciona uma margem acima e abaixo dos títulos dos itens do portfólio */
+            color: #FF6F61; /* Define a cor do texto dos títulos */
+        }
+
+        .portfolio-item p {
+            color: #ffffff; /* Define a cor do texto dos parágrafos */
+            font-size: 16px; /* Define o tamanho da fonte dos parágrafos */
+        }
+
+        .portfolio-item a {
+            display: inline-block; /* Faz com que o link se comporte como um bloco em linha */
+            margin-top: 10px; /* Adiciona uma margem acima do link */
+            padding: 8px 15px; /* Adiciona padding ao link */
+            background-color: #FF6F61; /* Define a cor de fundo do link */
+            color: #000000; /* Define a cor do texto do link */
+            text-decoration: none; /* Remove o sublinhado do link */
+            border-radius: 4px; /* Adiciona bordas arredondadas ao link */
+            transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo do link */
+        }
+
+        .portfolio-item a:hover {
+            background-color: #FF856E; /* Muda a cor de fundo do link ao passar o mouse sobre ele */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">EG</a> <!-- Logo do site, que pode ser um link para a página inicial -->
+
+        <nav>
+            <!-- Navegação do site com links para diferentes páginas -->
+            <a href="index.html">Sobre</a>
+            <a href="formacao.html">Formação</a>
+            <a href="portfolio.html" class="active">Portfólio</a> <!-- Link para a página de Portfólio, marcado como ativo -->
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Meu Portfólio</h1> <!-- Título da seção de portfólio -->
+        <div class="portfolio-grid">
+            <!-- Item de Portfólio 1 -->
+            <div class="portfolio-item">
+                <img src="imagem1.jpg" alt="Projeto 1"> <!-- Imagem do projeto -->
+                <h2>Cofrinho</h2> <!-- Título do projeto -->
+                <p>O cofre tem como objetivo calcular o dinheiro poupado pelo usuário. Desenvolvido em Java, o sistema é capaz de contabilizar valores em dólares, euros e reais. Foi criado para a disciplina de Programação Orientada a Objetos (POO).</p> <!-- Descrição do projeto -->
+                <a href="https://github.com/EnielGomes" target="_blank">Ver Mais</a> <!-- Link para mais detalhes sobre o projeto -->
+            </div>
+
+            <!-- Item de Portfólio 2 -->
+            <div class="portfolio-item">
+                <img src="imagem2.jpg" alt="Projeto 2"> <!-- Imagem do projeto -->
+                <h2>Prototype Steam</h2> <!-- Título do projeto -->
+                <p>Protótipo da Steam, desenvolvido para fins educacionais, que simula uma loja de jogos com funcionalidades interativas. Este projeto foi realizado como parte da disciplina de Design de Interação.</p> <!-- Descrição do projeto -->
+                <a href="https://app.quant-ux.com/#/test.html?h=a2aa10aQy5mOw90lnrvYssSmuz1ceaLt2ZEt1O4nqzqCDDLeZ3gyPa2owLla&ln=pt" target="_blank">Ver Mais</a> <!-- Link para mais detalhes sobre o projeto -->
+            </div>
+
+            <!-- Item de Portfólio 3 -->
+            <div class="portfolio-item">
+                <img src="imagem3.jpg" alt="Projeto 3"> <!-- Imagem do projeto -->
+                <h2>Açaiteria do Eniel</h2> <!-- Título do projeto -->
+                <p>Este projeto teve como objetivo desenvolver um sistema para uma açaiteria, permitindo calcular preços com base nos produtos adquiridos pelos clientes. O sistema foi implementado em Python como parte da disciplina de Lógica de Programação e Algoritmos.</p> <!-- Descrição do projeto -->
+                <a href="https://github.com/EnielGomes" target="_blank">Ver Mais</a> <!-- Link para mais detalhes sobre o projeto -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
